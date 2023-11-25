@@ -39,7 +39,7 @@ function Users() {
 
          // get STRIPE_API_KEY for payment from backend for cnnection to stripe payment gateWaY
   async function getStripeApiKey() {
-    const { data } = await axios.get("/api/v1/stripeapikey");
+    const { data } = await axios.get(`${process.env.REACT_APP_PORT}/api/v1/stripeapikey`);
     setStripeApiKey(data.stripeApiKey);
   }
 

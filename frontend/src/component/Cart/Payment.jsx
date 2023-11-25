@@ -414,7 +414,7 @@ const PaymentComponent = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/v1/payment/process",
+        `${process.env.REACT_APP_PORT}/api/v1/payment/process`,
         paymentData,
         config
       );

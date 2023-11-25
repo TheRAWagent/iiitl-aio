@@ -71,13 +71,13 @@ Whether you're a student eager to enhance your academic journey or an institutio
 
     ````bash
     PORT = 5000
-    DB_LINK ="mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority"
+    DB_LINK = "mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority"
     NODE_ENV = production
     JWT_SECRET = <jwt-secret-key>
     JWT_EXPIRE = 5d
     COOKIE_EXPIRE = 5
-    SMTP_HOST=smtp.gmail.com
-    SMTP_PORT=465
+    SMTP_HOST = smtp.gmail.com
+    SMTP_PORT = 465
     SMTP_SERVICE = gmail
     SMTP_MAIL = <smtp-email>
     SMTP_PASSWORD = <smtp-password>
@@ -85,7 +85,7 @@ Whether you're a student eager to enhance your academic journey or an institutio
     CLOUDINARY_NAME = <cloudinary-name>
     API_KEY = <api-key>
     API_SECRET = <api-secret>
-    CLOUDINARY_URL=cloudinary://<api-key>:<api-secret>@<cloudinary-name>
+    CLOUDINARY_URL = cloudinary://<api-key>:<api-secret>@<cloudinary-name>
     FRONTEND_URL = http://localhost:3000
     STRIPE_API_KEY = <stripe-api-key>
     STRIPE_SECRET_KEY = <stripe-secret-key>

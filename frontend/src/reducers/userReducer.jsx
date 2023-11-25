@@ -64,7 +64,7 @@ export const userReducer = (state = initialState, action) => {
     case LOGIN_SUCCESS:
     case REGISTER_USER_SUCCESS:
     case LOAD_USER_SUCCESS:
- 
+      console.log(state, 'check STATE in reducer')
       return {
         ...state,
         loading: false,
