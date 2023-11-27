@@ -24,7 +24,7 @@ const Layout = ({ children, products }) => {
         innerScale={0.7}
         outerScale={5}
         hasBlendMode={true}
-        color='14, 41, 84'
+        color='0, 255, 255'
           clickables={[
             'a',
             'input[type="text"]',

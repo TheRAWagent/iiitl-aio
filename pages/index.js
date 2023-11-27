@@ -31,8 +31,10 @@ export default function Home({ product, categories, customer_reviwes }) {
           <motion.div initial={{ scale: 0 }} exit={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 100, duration: 0.6, delay: 0.1, scale: 2 }}>
            
             <Ads/>
+            <p className='m-auto w-full lg:w-4/6 py-10 lg:w-4/6 w-full text-2xl italic tracking-wide'>Reviews:</p>
             <Reviwes data={customer_reviwes} />
 
+            <p className='m-auto w-full lg:w-4/6 py-10 lg:w-4/6 w-full text-2xl italic tracking-wide'>Categories:</p>
             <div className='m-auto w-full lg:w-4/6 py-10 grid grid-flow-row grid-cols-1 lg:grid-cols-3 md:grid-cols-2 px-5 gap-x-4 gap-y-4'>
               {
                 categories?.map((item, indes) => {

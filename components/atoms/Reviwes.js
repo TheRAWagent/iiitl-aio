@@ -20,7 +20,7 @@ const Reviwes = ({ data }) => {
                     loop={true}
                     autoplay={{
                         delay: 3000,
-                        disableOnInteraction: false,
+                        disableOnInteraction: true,
                     }}
                     navigation={true}
                     parallax={true}
@@ -52,7 +52,7 @@ const Reviwes = ({ data }) => {
                     loop={true}
                     autoplay={{
                         delay: 3000,
-                        disableOnInteraction: false,
+                        disableOnInteraction: true,
                     }}
                     navigation={true}
                     parallax={true}

@@ -10,7 +10,7 @@ const Footer = () => {
                         <div className="w-full lg:w-6/12 px-4">
                             <h4 className="text-3xl fonat-semibold text-blueGray-700">Let's keep in touch!</h4>
                             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
-                                Find us on any of these platforms, we respond 1-2 business days.
+                                Find us on any of these platforms, we respond soon.
                             </h5>
                             <div className="mt-6 lg:mb-0 flex gap-x-5 mb-6">
 
@@ -25,7 +25,7 @@ const Footer = () => {
                                     </svg>
                               </Link>
 
-                              <Link href={'https://www.instagram.com/_inert___/'}>
+                              <Link href={'https://www.instagram.com/gopi_vaibhav/'}>
                                 <svg fill="#ffffff" height="35px" width="35px" version="1.1" id="Layer_1" 
                                     viewBox="-143 145 512 512" >
                                 <g>

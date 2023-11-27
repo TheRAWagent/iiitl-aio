@@ -48,7 +48,7 @@ const login = () => {
 
         <div className='bg-white w-full lg:w-[50%] shadow-2xl  h-fit flex flex-col-3 justify-between pt-10 px-10 m-auto '>
           <h1 className='text-2xl '>
-            Sign In to DRUGWISE
+            Sign In to AIO
           </h1>
         </div>
         <div className='bg-white w-full lg:w-[50%] shadow-2xl  h-fit lg:flex flex-col-3 justify-between pt-5  pb-10 px-10 m-auto '>
