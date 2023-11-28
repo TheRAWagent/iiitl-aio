@@ -11,6 +11,17 @@ export const signin = async (email,password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        fetch('http://localhost:5000/api/user?email='+email,{
+          method:'GET',
+          headers:{
+            'Content-Type':'application/json'
+          }
+        }).then((data)=>{
+          console.log(data);
+        }
+        ).catch((err)=>{
+          console.log(err);
+        })
         return user
       })
       .catch((error) => {
@@ -26,6 +37,18 @@ export const google=async()=>{
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
+        fetch(`http://localhost:5000/api/user?email=${user.email}&name=${user.displayName}&photoUrl=${user.photoURL}`,{
+          method:'GET',
+          headers:{
+            'Content-Type':'application/json'
+          }
+        }).then((data)=>{
+          console.log(data);
+        }
+        ).catch((err)=>{
+          console.log(err);
+        })
+          
       }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;

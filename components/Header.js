@@ -3,12 +3,13 @@ import Button from './atoms/Button'
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import app from './firebase'
+import app from '@/firebase/config'
 import Cart from './Cart';
 import { motion } from 'framer-motion';
 import SearchProduct from './SearchProduct';
 
 const Header = ({ products }) => {
+  const [email, setEmail] = useState('')
   const router = useRouter()
   const [toggle, setToggle] = useState(true)
 
@@ -22,6 +23,7 @@ const Header = ({ products }) => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
+        setEmail(user.email)
         if (user.photoURL) { setprofilepic(user.photoURL) }
         setSignedin(true)
       }
@@ -33,6 +35,10 @@ const Header = ({ products }) => {
       router.push('/login')
     }).catch((error) => {
     });
+  }
+
+  const openProfile=()=>{
+    router.push('/profile?email='+email)
   }
   const [opencart, setOpenCart] = useState(false)
 
@@ -75,7 +81,8 @@ const Header = ({ products }) => {
                 </div>
 
                 {dp ?
-                  <motion.div initial={{ scale: 0 }} exit={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 100, duration: 0.6, delay: 0.1, scale: 2 }} className='absolute bg-white shadow-lg rounded-md px-10 py-4 translate-x-[-20px] z-40'>
+                  <motion.div initial={{ scale: 0 }} exit={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 100, duration: 0.6, delay: 0.1, scale: 2 }} className='absolute bg-white shadow-lg rounded-md px-10 py-4 translate-x-[-20px] z-40' style={{display:'flex',flexDirection:'column  '}}>
+                    <button onClick={openProfile}>Profile</button>
                     <button onClick={signoutme}>Logout</button>
                   </motion.div> : <div></div>
                 }
