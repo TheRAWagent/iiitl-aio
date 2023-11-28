@@ -87,6 +87,7 @@ const Sidebar = ({ handleSideBarMenu, isAuthenticated, user }) => {
           <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
             <li className="sidebar-menu-item" onClick={logOutHandler}>
             <ExitToAppIcon fontSize="large" />
+            <img src='https://cdn-icons-png.flaticon.com/128/1828/1828479.png' alt='logout' className='w-9'/>
             <span className="sidebar-menu-item-text">Logout</span>
           </li>
           </Link>

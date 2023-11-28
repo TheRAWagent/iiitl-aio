@@ -5,7 +5,7 @@ const Seo = () => {
     <div>
     <Head>
     <title>AIO</title>
-    <link rel="icon" href="https://ik.imagekit.io/cmef8hxb6/Modern_Blue_Medicine_Center_Hospital_Logo-removebg-preview_Q9fZEGjK-.png?updatedAt=1688294045078" sizes="any" />
+    <link rel="icon" href="/AIO.png" sizes="any" />
    </Head>
     </div>
   )

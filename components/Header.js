@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Button from './atoms/Button'
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -29,7 +28,9 @@ const Header = ({ products }) => {
       }
     });
   }, [])
-
+  const redirectCommunity = () => {
+    router.push('/community')
+  }
   const signoutme = async () => {
     signOut(auth).then(() => {
       router.push('/login')
@@ -49,11 +50,11 @@ const Header = ({ products }) => {
         <Cart opencart={opencart} products={products} setOpenCart={setOpenCart} />
       </motion.div>
 
-      <nav className='px-36 hidden  justify-between items-center w-full py-4 bg-white lg:flex  gap-x-20 shadow-md'>
+      <nav className='px-36 hidden  justify-between items-center w-full py-4 bg-white lg:flex  gap-x-20 shadow-md fixed top-0 z-10'>
 
         <div>
           <Link href={'/'}>
-            <img className='h-16 w-16' src="https://ik.imagekit.io/cmef8hxb6/Modern_Blue_Medicine_Center_Hospital_Logo-removebg-preview_Q9fZEGjK-.png?updatedAt=1688294045078" alt="Logo" />
+            <img className='h-16 w-16' src="/AIO.png" alt="Logo" />
           </Link>
         </div>
 
@@ -70,10 +71,12 @@ const Header = ({ products }) => {
           signedin ?
             <div className='flex items-center  gap-x-4'>
               <button onClick={() => { setOpenCart(!opencart) }} className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                </svg>
+                <img src='https://cdn-icons-png.flaticon.com/128/3514/3514491.png' alt='cart' className='w-9'/>
                 <span className='mx-3'>Cart</span>
+              </button>
+              <button onClick={redirectCommunity} className="flex items-center">
+                <img src='https://cdn-icons-png.flaticon.com/128/4121/4121044.png' alt='community' className='w-9'/>
+                <span className='mx-3'>Community</span>
               </button>
               <div  >
                 <div onClick={() => { setdp(!dp) }}>
@@ -93,15 +96,15 @@ const Header = ({ products }) => {
 
             <div className='flex items-center  gap-x-4'>
               <button onClick={() => { setOpenCart(!opencart) }} className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                </svg>
+                <img src='https://cdn-icons-png.flaticon.com/128/3514/3514491.png' alt='cart' className='w-9'/>
                 <span className='mx-3'>Cart</span>
               </button>
+              <button onClick={redirectCommunity} className="flex items-center">
+                <img src='https://cdn-icons-png.flaticon.com/128/4121/4121044.png' alt='community' className='w-9'/>
+                <span className='mx-3'>Community</span>
+              </button>
               <Link href={'/login'} className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                </svg>
+                <img src='https://cdn-icons-png.flaticon.com/128/1828/1828445.png' alt='login' className='w-9'/>
                 <span className='mx-3'>hello, Login</span>
               </Link>
             </div>

@@ -44,7 +44,7 @@ const login = () => {
 
       <motion.div
       initial={{ y: -600 }} animate={{ y: 0 }} transition={{ delay: 0 }}>
-      <div className='py-10'>
+      <div className='py-10 mt-20'>
 
         <div className='bg-white w-full lg:w-[50%] shadow-2xl  h-fit flex flex-col-3 justify-between pt-10 px-10 m-auto '>
           <h1 className='text-2xl '>
