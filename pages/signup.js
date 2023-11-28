@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 import med from '../lotties/med.json'
 import Button from '@/components/atoms/Button';
 import Link from 'next/link';
-import app from '../components/firebase'
+import app from '../firebase/config'
 import { useRouter } from 'next/navigation'
 import { getAuth,createUserWithEmailAndPassword,onAuthStateChanged  } from "firebase/auth";
 import Layout from '@/components/Layout';
