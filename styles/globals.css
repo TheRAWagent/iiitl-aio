@@ -3,3 +3,46 @@
 @tailwind utilities;
 
 
+.profile-container {
+    text-align: center;
+    margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #4A00E0, #8E2DE2);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+  }
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .user-info {
+    font-size: 20px;
+  }
+  .skills h2{
+  font-size: 40px;
+  margin-bottom: 10px;
+  }
+.skills ul{
+    color: #69cefe;
+}
+  .skills{
+    padding-top: 30px;
+    font-size: 25px;
+}
