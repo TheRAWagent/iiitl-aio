@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const Message = ({ message }) => {
   const [user] = useAuthState(auth);
   return (
-    <div className={`w-full m-3 ${message.uid === user.uid ? "justify-end" : "justify-start"} flex flex-row items-center`}>
+    <div className={`w-full my-3 ${message.uid === user.uid ? "justify-end" : "justify-start"} flex flex-row items-center`}>
       <img
         className="h-20 w-20 rounded-full"
         src={message.avatar}

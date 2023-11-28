@@ -26,7 +26,15 @@ const Ads = () => {
         >
           <SwiperSlide>
             <Image
-              src="/ads/ad1.png"
+              src="/Banner1.png"
+              width={1200}
+              height={400}
+              alt="Ad1"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="/Banner2.png"
               width={1200}
               height={400}
               alt="Ad1"
@@ -35,14 +43,6 @@ const Ads = () => {
           <SwiperSlide>
             <Image
               src="/ads/ad2.png"
-              width={1200}
-              height={400}
-              alt="Ad1"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="/ads/ad3.png"
               width={1200}
               height={400}
               alt="Ad1"

@@ -63,8 +63,9 @@ const ChatBox = () => {
           ".link",
         ]}
       />
-      <main className="h-screen mt-25">
-        <div className="messages-wrapper">
+      <br />
+      <main className="h-screen mt-24">
+        <div className="my-3">
           {messages?.map((message) => (
             <Message key={message.id} message={message} />
           ))}
