@@ -1,4 +1,7 @@
 import { getApps, initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_KEY,
   authDomain: "uowa-ad445.firebaseapp.com",
@@ -9,5 +12,9 @@ const firebaseConfig = {
   measurementId: "G-D2TXS14B4G"
 };
 
+// Initialize Firebase
+// const app = initializeApp(firebaseConfig);
 
 export const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);

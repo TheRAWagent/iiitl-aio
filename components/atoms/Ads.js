@@ -8,7 +8,7 @@ import Image from 'next/image';
 const Ads = () => {
   return (
     <div>
-      <div className='m-auto -z-0 lg:w-4/6 w-full py-10'>
+      <div className='m-auto -z-0 lg:w-4/6 w-full py-10 mt-20'>
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
