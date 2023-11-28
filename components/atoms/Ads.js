@@ -8,7 +8,7 @@ import Image from 'next/image';
 const Ads = () => {
   return (
     <div>
-      <div className='m-auto -z-0 lg:w-4/6 w-full py-10'>
+      <div className='m-auto -z-0 lg:w-4/6 w-full py-10 mt-20'>
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
@@ -26,7 +26,15 @@ const Ads = () => {
         >
           <SwiperSlide>
             <Image
-              src="/ads/ad1.png"
+              src="/Banner1.png"
+              width={1200}
+              height={400}
+              alt="Ad1"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image
+              src="/Banner2.png"
               width={1200}
               height={400}
               alt="Ad1"
@@ -35,14 +43,6 @@ const Ads = () => {
           <SwiperSlide>
             <Image
               src="/ads/ad2.png"
-              width={1200}
-              height={400}
-              alt="Ad1"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="/ads/ad3.png"
               width={1200}
               height={400}
               alt="Ad1"

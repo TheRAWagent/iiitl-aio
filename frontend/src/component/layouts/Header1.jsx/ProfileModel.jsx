@@ -169,6 +169,7 @@ const ProfileModal = ({ user, isAuthenticated }) => {
               ) : (
                 <div className="menu-item" onClick={logoutUserHandler}>
                   <ExitToAppIcon className="menu-icon" />
+                  <img src='https://cdn-icons-png.flaticon.com/128/1828/1828479.png' alt='logout' className='w-9'/>
                   <span>Logout</span>
                 </div>
               )}

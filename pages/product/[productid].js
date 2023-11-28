@@ -57,12 +57,13 @@ const productid = ({ product }) => {
     return loading ?(
         <motion.div initial={{ scale: 0 }} exit={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 100, duration: 0.6, delay: 0.1, scale: 2 }}>
         <Layout products={product}>
+            <br className='my-3'/>
             <motion.div initial={{ scale: 0 }} exit={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 100, duration: 0.6, delay: 0.1, scale: 2 }} className='px-10 lg:w-2/3 w-full m-auto'>
                 {
                     product?.map((item, ind) => {
                         if (item._id == productid) {
                             return (
-                                <div key={ind} className="py-10" >
+                                <div key={ind} className="py-10 my-5" >
                                     <div className=' block gap-x-20'>
                                         <div className='min-h-80'>
                                         {
