@@ -5,7 +5,7 @@ import Paymentform from '@/components/Paymentform';
 import Progress from '@/components/Progress';
 import ShippingAdress from '@/components/ShippingAdress';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import app from '../components/firebase'
+import app from '../firebase/config'
 import { useRouter } from 'next/navigation';
 import client from '@/sanity/client';
 

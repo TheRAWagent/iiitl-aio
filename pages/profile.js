@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import Layout from "@/components/Layout";
+import { auth } from "@/firebase/config";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const branches = {
   cs: "Computer Science",
@@ -8,6 +11,7 @@ const branches = {
 };
 
 function profile() {
+  const [user] = useAuthState(auth);
   const params = useSearchParams();
   const email = params.get("email");
   console.log(email);
@@ -19,7 +23,15 @@ function profile() {
   const [batch, setBatch] = useState("2023");
   useEffect(() => {
     async function fetchData() {
-      await fetch("http://127.0.0.1:5000/api/user?email=" + email, {
+      // if(email === 'gopivaibhav0@gmail.com'){
+      //   // setprofilepic('https://avatars.githubusercontent.com/u/55149988?v=4')
+      //   setprofilepic('https://lh3.googleusercontent.com/a/ACg8ocIsYk5dDN1ra07Llqb6yrpk9XrdwUmcPHsOxCD7FXko_wk=s96-c')
+      //   setName('Gopi Vaibhav')
+      //   setBranch('Computer Science')
+      //   setBatch('2023')
+      //   setSkills(['Web Development','DevOps','Competitive Programming'])
+      // }
+      await fetch("https://database-proxy.vercel.app/api/user?email=" + email, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -54,33 +66,37 @@ function profile() {
     "Java Programming",
   ]);
   return (
-    <div className="profile-container">
-      <div className="profile-photo">
-        <img src={profilepic} alt="Profile Photo" />
-      </div>
-      <div className="user-info">
-        <p>Name: {name}</p>
-        <p>Branch: {branch}</p>
-        <p>Batch: {batch}</p>
-      </div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "50% 50%",
-          width: "100vw",
-        }}
-      >
-        <div className="skills">
-          <h2>Skills</h2>
-          <ul>
-            {skills.map((skill, index) => (
-              <li key={index}>✅ {skill}</li>
-            ))}
-          </ul>
+    <>
+      <Layout>
+      <div className="profile-container">
+        <div className="profile-photo">
+          <img src={profilepic} alt="Profile Photo" />
         </div>
-        <div></div>
+        <div className="user-info">
+          <p>Name: {name}</p>
+          <p>Branch: {branch}</p>
+          <p>Batch: {batch}</p>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "50% 50%",
+            width: "100vw",
+          }}
+        >
+          <div className="skills">
+            <h2>Skills</h2>
+            <ul>
+              {skills.map((skill, index) => (
+                <li key={index}> {skill}</li>
+              ))}
+            </ul>
+          </div>
+          <div></div>
+        </div>
       </div>
-    </div>
+      </Layout>
+    </>
   );
 }
 

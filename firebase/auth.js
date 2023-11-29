@@ -11,7 +11,7 @@ export const signin = async (email,password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        fetch('http://localhost:5000/api/user?email='+email,{
+        fetch('https://database-proxy.vercel.app/api/user?email='+email,{
           method:'GET',
           headers:{
             'Content-Type':'application/json'
@@ -37,7 +37,7 @@ export const google=async()=>{
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-        fetch(`http://localhost:5000/api/user?email=${user.email}&name=${user.displayName}&photoUrl=${user.photoURL}`,{
+        fetch(`https://database-proxy.vercel.app/api/user?email=${user.email}&name=${user.displayName}&photoUrl=${user.photoURL}`,{
           method:'GET',
           headers:{
             'Content-Type':'application/json'

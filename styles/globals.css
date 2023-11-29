@@ -8,13 +8,13 @@
     margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
-      background: linear-gradient(to right, #4A00E0, #8E2DE2);
-      color: #fff;
+      background-color: #fff;
+      color: #000;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      height: 80vh;
   }
 
   .profile-photo {
@@ -40,7 +40,7 @@
   margin-bottom: 10px;
   }
 .skills ul{
-    color: #69cefe;
+    color: #0E2954;
 }
   .skills{
     padding-top: 30px;
