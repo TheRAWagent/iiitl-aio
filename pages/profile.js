@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Layout from "@/components/Layout";
-import { auth } from "@/firebase/config";
-import { useAuthState } from "react-firebase-hooks/auth";
 
 const branches = {
   cs: "Computer Science",
@@ -11,7 +9,6 @@ const branches = {
 };
 
 function profile() {
-  const [user] = useAuthState(auth);
   const params = useSearchParams();
   const email = params.get("email");
   console.log(email);
@@ -31,6 +28,7 @@ function profile() {
       //   setBatch('2023')
       //   setSkills(['Web Development','DevOps','Competitive Programming'])
       // }
+      if(email!==null)
       await fetch("https://database-proxy.vercel.app/api/user?email=" + email, {
         method: "GET",
         headers: {
